@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block content%}
+
+<h1>haz tu reserva y vive la expericia</h1>
+
+<form method="POST">
+    {% csrf_token %}
+   <table>
+       {{ form.as_table}}
+    </table>
+  <input type="submit" value="Aceptar">
+</form>
+
+{% endblock %}

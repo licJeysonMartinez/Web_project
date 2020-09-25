@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h3>Lista Reservas:</h3>
+<table border="2">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Comensales</th>
+            <th>Opcion</th>
+        </tr>
+    </thead>
+    <tbody>
+         {% for reservas in reservas %}
+            <tr>
+                <td>{{reservas.nombre}}</td>
+                <td>{{reservas.apellido}}</td>
+                <td>{{reservas.fecha}}</td>
+                <td>{{reservas.hora}}</td> 
+                <td>{{reservas.numero_comensales}}</td>
+                <td><a href="{% url 'editar' reservas.id %}"> EDITAR</a>  <a href="{% url 'eliminar' reservas.id %}">ELIMINAR</a></td>
+            </tr>
+         {% endfor %}
+   </tbody>
+</table>
+{% endblock%}
